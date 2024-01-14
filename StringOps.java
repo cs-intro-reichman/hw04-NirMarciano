@@ -116,7 +116,7 @@ public class StringOps {
         int[] array = new int[count];
         int n;
         int m = 0;
-        System.out.print("output: {");
+        System.out.print("[");
         for(int i = 0; i < count; i++) {
             n = str2.indexOf(chr);
             m = m + n + 1;
@@ -124,7 +124,7 @@ public class StringOps {
             str2 = str2.substring(n + 1);
            
             if(i == count - 1)
-            System.out.print(array[i] + "}");
+            System.out.print(array[i] + "]");
             else
             System.out.print(array[i] + ", ");
         }
