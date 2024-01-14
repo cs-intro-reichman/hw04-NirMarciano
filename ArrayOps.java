@@ -14,6 +14,7 @@ public class ArrayOps {
         System.out.println(findMissingInt(arr2) + " " + secondMaxValue(arr2) + " " + maxValue(arr2));
         System.out.println(findMissingInt(arr3) + " " + secondMaxValue(arr3) + " " + maxValue(arr3));
         System.out.println(findMissingInt(arr4) + " " + secondMaxValue(arr4) + " " + maxValue(arr4));
+        */
 
         System.out.println(secondMaxValue(new int[] {6, 9, 4, 7, 3, 4}));
         System.out.println(secondMaxValue(new int[] {1, 2, 3, 4, 5}));
@@ -21,15 +22,17 @@ public class ArrayOps {
         System.out.println(secondMaxValue(new int[] {1, -2, 3, -4, 5}));
         System.out.println(secondMaxValue(new int[] {-202, 48, 13, 7, 8})); 
 
+        /*
         System.out.println(containsTheSameElements(arr1, arr2));
         System.out.println(containsTheSameElements(arr1, arr3));
         System.out.println(containsTheSameElements(arr2, arr4));
         System.out.println(containsTheSameElements(arr4, arr5));
         System.out.println(containsTheSameElements(arr4, arr6));
         */
+        
 
-        System.out.println(isSorted(arr1) + " " +  isSorted(arr2) + " " +  isSorted(arr3));
-        System.out.println(isSorted(arr4) + " " + isSorted(arr5) + " " +  isSorted(arr6) + " " +  isSorted(arr7));
+        //System.out.println(isSorted(arr1) + " " +  isSorted(arr2) + " " +  isSorted(arr3));
+        //System.out.println(isSorted(arr4) + " " + isSorted(arr5) + " " +  isSorted(arr6) + " " +  isSorted(arr7));
         
     }
     
@@ -55,10 +58,12 @@ public class ArrayOps {
     public static int secondMaxValue(int [] array) {
         int[] newArr = new int[array.length];
         int max = maxValue(array);
-
+        int n = indexOfArr(array, max);
         for(int i = 0; i < array.length; i++) {
-            if(array[i] != max)
+            if(array[i] < max)
             newArr[i] = array[i];
+            else if(i != n) 
+                    return max;
         }
 
         return maxValue(newArr);
@@ -100,6 +105,15 @@ public class ArrayOps {
         }
         return max;
     }
+
+    public static int indexOfArr(int arr[], int n) { 
+        for(int i = 0; i < arr.length; i++) { 
+            if (arr[i] == n) { 
+                return i; 
+            } 
+        } 
+        return -1; 
+    } 
 
     public static boolean arrContainsArr (int[] array1, int[] array2) {
         boolean test = true;
