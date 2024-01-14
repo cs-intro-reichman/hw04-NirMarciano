@@ -27,7 +27,7 @@ public class StringOps {
         String str3 = "vowels are   fun";
         String str4 = "intro  AND   yelloW";
         String str5 = "    Intro    to    coMPUter    sCIEncE      ";
-
+        String str6 = "Hello WorLd";
         
         System.out.println(capVowelsLowRest(str1));
         System.out.println(capVowelsLowRest(str2));
@@ -48,6 +48,7 @@ public class StringOps {
         allIndexOf(str3,' ');
         allIndexOf(str4,'D');
         allIndexOf(str5,'r');
+        allIndexOf(str6,'l');
         
     }
 
@@ -115,13 +116,13 @@ public class StringOps {
 
         int[] array = new int[count];
         int n;
-        int m = 0;
+        int m = -1;
         System.out.print("[");
         for(int i = 0; i < count; i++) {
-            n = str2.indexOf(chr);
-            m = m + n + 1;
+            n = str2.indexOf(chr) + 1;
+            m = m + n;
             array[i] = m;
-            str2 = str2.substring(n + 1);
+            str2 = str2.substring(n);
            
             if(i == count - 1)
             System.out.print(array[i] + "]");
