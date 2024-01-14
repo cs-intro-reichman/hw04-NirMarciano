@@ -43,12 +43,12 @@ public class StringOps {
         System.out.println(camelCase("AasJiaj"));
         
 
-        allIndexOf(str1,'l');
-        allIndexOf(str2,'e');
-        allIndexOf(str3,' ');
-        allIndexOf(str4,'D');
-        allIndexOf(str5,'r');
-        allIndexOf(str6,'l');
+        printArr(allIndexOf(str1,'l'));
+        printArr(allIndexOf(str2,'e'));
+        printArr(allIndexOf(str3,' '));
+        printArr(allIndexOf(str4,'D'));
+        printArr(allIndexOf(str5,'r'));
+        printArr(allIndexOf(str6,'l'));
         
     }
 
@@ -117,21 +117,26 @@ public class StringOps {
         int[] array = new int[count];
         int n;
         int m = -1;
-        System.out.print("[");
+
         for(int i = 0; i < count; i++) {
             n = str2.indexOf(chr) + 1;
             m = m + n;
             array[i] = m;
             str2 = str2.substring(n);
-           
-            if(i == count - 1)
-            System.out.print(array[i] + "]");
+        }
+        return array;
+    }
+
+    public static void printArr (int [] arr) {
+        System.out.print("[");
+        for(int i = 0; i < arr.length; i++) {
+            if(i == arr.length - 1)
+            System.out.print(arr[i] + "]");
             else
-            System.out.print(array[i] + ", ");
+            System.out.print(arr[i] + ", ");
         }
         
         System.out.println();
-        return array;
     }
 
     public static String lowerCase (String string) {
